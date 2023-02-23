@@ -1,19 +1,24 @@
-// Напиши скрипт, який:
+// HTML містить порожній список ul#ingredients.
 
-// Порахує і виведе в консоль кількість категорій в ul#categories, тобто елементів li.item.
-// Для кожного элемента li.item у списку ul#categories, знайде і виведе в консоль текст заголовку елемента(тегу < h2 >) і кількість елементів в категорії(усіх < li >, вкладених в нього).
-// В результаті, в консолі будуть виведені наступні повідомлення.
+// < ul id = "ingredients" ></ >
 
-// Number of categories: 3
+//   JavaScript містить масив рядків.
 
-// Category: Animals
-// Elements: 4
+// const ingredients = [
+//   "Potatoes",
+//   "Mushrooms",
+//   "Garlic",
+//   "Tomatos",
+//   "Herbs",
+//   "Condiments",
+// ];
 
-// Category: Products
-// Elements: 3
+// Напиши скрипт, який для кожного елемента масиву ingredients:
 
-// Category: Technologies
-// Elements: 5
+// Створить окремий елемент < li >.Обов'язково використовуй метод document.createElement().
+// Додасть назву інгредієнта як його текстовий вміст.
+// Додасть елементу клас item.
+// Після чого, вставить усі < li > за одну операцію у список ul#ingredients.
 
 const ingredients = [
   'Potatoes',
@@ -23,3 +28,7 @@ const ingredients = [
   'Herbs',
   'Condiments',
 ];
+const ingredientsList = document.querySelector('#ingredients');
+
+const listItem = ingredients.map(ingridient => `<li class ="item">${ingridient}</li>`).join('');
+ingredientsList.innerHTML = listItem;
